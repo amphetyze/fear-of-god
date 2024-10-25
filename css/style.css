@@ -43,19 +43,19 @@ body {
 
 @font-face {
   font-family: "STRANGER CREATURE";
-  src: url("../fonts/stranger-creature/STRANGERCREATURE.woff2") format("woff2"), url("../fonts/stranger-creature/STRANGERCREATURE.woff") format("woff"), url("../fonts/stranger-creature/STRANGERCREATURE.ttf") format("truetype"), url("../fonts/stranger-creature/STRANGERCREATURE.eot") format("embedded-opentype");
+  src: url("/fonts/stranger-creature/STRANGERCREATURE.woff2") format("woff2"), url("/fonts/stranger-creature/STRANGERCREATURE.woff") format("woff"), url("/fonts/stranger-creature/STRANGERCREATURE.ttf") format("truetype"), url("/fonts/stranger-creature/STRANGERCREATURE.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Beatrice Deck Trial Medium";
-  src: url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff2") format("woff2"), url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff") format("woff"), url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.ttf") format("truetype"), url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.eot") format("embedded-opentype");
+  src: url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff2") format("woff2"), url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff") format("woff"), url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.ttf") format("truetype"), url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Vela Sans";
-  src: url("../fonts/vela-sans/VelaSans-SemiBold.woff2") format("woff2"), url("../fonts/vela-sans/VelaSans-SemiBold.woff") format("woff"), url("../fonts/vela-sans/VelaSans-SemiBold.ttf") format("truetype"), url("../fonts/vela-sans/VelaSans-SemiBold.eot") format("embedded-opentype");
+  src: url("/fonts/vela-sans/VelaSans-SemiBold.woff2") format("woff2"), url("/fonts/vela-sans/VelaSans-SemiBold.woff") format("woff"), url("/fonts/vela-sans/VelaSans-SemiBold.ttf") format("truetype"), url("/fonts/vela-sans/VelaSans-SemiBold.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -561,7 +561,7 @@ body {
   max-width: 1110px;
   width: 100%;
   min-height: 366px;
-  background-image: url("../img/banner/poster.png");
+  background-image: url("/img/banner/poster.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;

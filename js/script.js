@@ -7,6 +7,7 @@ const cartButton = document.querySelector('.shopping-cart-button');
 const cartModal = document.querySelector('.cart');
 
 let shoppingCartCounter = 0;
+let cartSum = 0;
 
 burgerButton.addEventListener('click', () => {
     changeBurgerStatus();
@@ -46,14 +47,14 @@ products.forEach(product => {
             selectedSize.classList.remove('size__item--selected');
             addToCartButton.innerHTML = `
             <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use href="/img/sprites.svg#product-mark"></use>
+                <use href="./img/sprites.svg#product-mark"></use>
             </svg>`;
             addToCartButton.setAttribute('disabled', 'disabled');
 
             setTimeout(() => {
                 addToCartButton.innerHTML = `
                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use href="/img/sprites.svg#product-plus"></use>
+                    <use href="./img/sprites.svg#product-plus"></use>
                 </svg>`;
                 addToCartButton.removeAttribute('disabled');
             }, 2000);
@@ -101,13 +102,17 @@ function addToCart(product, selectedSize) {
     itemSize.className = 'item__property';
     itemSize.textContent = `Size: ${selectedSize}`;
 
+    const itemColor = document.createElement('span');
+    itemColor.className = 'item__property';
+    itemColor.textContent = 'Color: DARK';
+
     const itemFooter = document.createElement('div');
     itemFooter.className = 'item__footer';
     const footerButton = document.createElement('button');
     footerButton.className = 'item__button';
     footerButton.innerHTML = `
     <svg class="item__button-icon" width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <use href="/img/sprites.svg#delete-icon"></use>
+        <use href="./img/sprites.svg#delete-icon"></use>
     </svg>`;
 
     itemHeader.appendChild(itemName);
@@ -116,6 +121,7 @@ function addToCart(product, selectedSize) {
     itemInfo.appendChild(itemBody);
     cartItem.appendChild(itemImage);
     cartItem.appendChild(itemInfo);
+    itemBody.appendChild(itemColor);
     itemBody.appendChild(itemSize);
     itemInfo.appendChild(itemFooter);
     itemFooter.appendChild(footerButton);
@@ -124,13 +130,17 @@ function addToCart(product, selectedSize) {
 
     footerButton.addEventListener('click', () => {
         cartItem.remove();
+        cartSum -= parseFloat(productPrice.trim());
         shoppingCartCounter--;
+        updateCartSum();
         updateCartCounter();
         checkCartForEmpty();
     });
 
+    cartSum += parseFloat(productPrice.trim());
     shoppingCartCounter++;
     updateCartCounter();
+    updateCartSum();
 }
 
 function updateCartCounter() {
@@ -140,6 +150,14 @@ function updateCartCounter() {
         cartCounterElement.textContent = shoppingCartCounter;
     }
 }
+
+function updateCartSum() {
+    const sum = document.querySelector('.cart__total-sum');
+
+    sum.textContent = `${cartSum} RUB`;
+}
+
+updateCartSum()
 
 function checkCartForEmpty() {
     const cartList = document.querySelector('.cart__list');
