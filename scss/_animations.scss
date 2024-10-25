@@ -1,0 +1,33 @@
+@keyframes shake {
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+}
+
+@keyframes cart {
+    from {
+        height: 100px;
+    }
+
+    to {
+        height: 560px;
+    }
+}
+
+@keyframes menu {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

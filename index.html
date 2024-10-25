@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet">
+    <script src="./js/script.js" defer></script>
+    <title>
+        Document
+    </title>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="#!" class="notification-bar">
+            Subscribe to our Newsletter For Latest Collections
+            <svg class="notification-bar__icon" width="15" height="15" viewBox="0 0 15 15" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <use href="./img/sprites.svg#notification-arrow"></use>
+            </svg>
+        </a>
+        <header class="header container">
+            <div class="header__wrapper">
+                <button class="shopping-cart-button">
+                    <svg class="shopping-cart-button__icon" width="19" height="17" viewBox="0 0 19 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <use href="./img/sprites.svg#shopping-cart"></use>
+                    </svg>
+                </button>
+                <div class="cart hidden">
+                    <ul class="cart__list">
+
+                    </ul>
+                    <!-- <li class="cart__item item">
+                            <img src="./img/products/product-1.png" alt="" class="item__image">
+                            <div class="item__info">
+                                <div class="item__header">
+                                    <span class="item__name">"FEAROFGOD" LOGO HOODIE</span>
+                                    <span class="item__price">4000 RUB</span>
+                                </div>
+                                <div class="item__body">
+                                    <span class="item__property item__property--color">COLOR: DARK</span>
+                                    <span class="item__property item__property--size">SIZE: M</span>
+                                </div>
+                                <div class="item__footer">
+                                    <button class="item__button">
+                                        <svg class="item__button-icon" width="12" height="14" viewBox="0 0 12 14"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <use href="./img/sprites.svg#delete-icon"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </li> -->
+                    <!-- <span class="cart-empty">В корзине пока пусто.</span> -->
+                    <div class="cart__footer">
+                        <div class="cart__info">
+                            <h2 class="cart__title">Total:</h2>
+                            <span class="cart__total-sum">1500000 RUB</span>
+                        </div>
+                        <button class="cart__button">Go to Checkout</button>
+                    </div>
+                </div>
+                <a href="./" class="header__logo logo">
+                    FEAR OF GOD
+                </a>
+                <ul class="header__support support">
+                    <li class="support__item">
+                        <a href="#!" class="support__link">
+                            <svg class="support__icon" width="21" height="17" viewBox="0 0 21 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <use href="./img/sprites.svg#telegram-icon"></use>
+                            </svg>
+                            Поддержка
+                        </a>
+                    </li>
+                    <li class="support__item">
+                        <a href="#!" class="support__link">
+                            <svg class="support__icon" width="23" height="15" viewBox="0 0 23 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <use href="./img/sprites.svg#vk-icon"></use>
+                            </svg>
+                            Поддержка
+                        </a>
+                    </li>
+                </ul>
+                <button class="burger">
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        <main class="main">
+            <section class="section container section--banner">
+                <div class="section__wrapper">
+                    <div class="section__image"></div>
+                </div>
+            </section>
+            <section class="section container section--shopping">
+                <div class="section__wrapper">
+                    <form class="section__form form">
+                        <h2 class="form__title">
+                            CONTACT INFO
+                        </h2>
+                        <input type="text" class="form__input" placeholder="Имя" autocomplete="off" required>
+                        <input type="text" class="form__input" placeholder="Фамилия" autocomplete="off" required>
+                        <input type="text" class="form__input" placeholder="Отчество" autocomplete="off" required>
+                        <input type="text" class="form__input" placeholder="Ваши соц.сети для связи" autocomplete="off"
+                            required>
+                        <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Город" autocomplete="off" required>
+                            <input type="text" class="form__input" placeholder="Пост-код" autocomplete="off" required>
+                        </div>
+                        <label class="form__checkbox checkbox">
+                            <input type="checkbox" class="checkbox__control visually-hidden" id="checkbox"
+                                autocomplete="off" required>
+                            <span class="checkbox__emulator"></span>
+                            <span class="checkbox__label">
+                                I agree to the Terms and Conditions
+                            </span>
+                        </label>
+                        <button class="form__button">
+                            Оформить заказ
+                            <svg width="50" height="14" viewBox="0 0 50 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <use href="./img/sprites.svg#button-arrow"></use>
+                            </svg>
+                        </button>
+                    </form>
+                    <div class="product">
+                        <div class="product__body">
+                            <img src="./img/products/product-1.png" alt="" class="product__image">
+                            <div class="product__actions">
+                                <ul class="product__size size">
+                                    <li class="size__item">
+                                        S
+                                    </li>
+                                    <li class="size__item">
+                                        M
+                                    </li>
+                                    <li class="size__item">
+                                        L
+                                    </li>
+                                    <li class="size__item">
+                                        XL
+                                    </li>
+                                </ul>
+                                <button class="add-to-cart">
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <use href="./img/sprites.svg#product-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product__footer">
+                            <span class="product__series">FEAROFGOD HOODIE</span>
+                            <div class="product__info">
+                                <span class="product__name">
+                                    "FEAROFGOD" LOGO HOODIE
+                                </span>
+                                <span class="product__price">
+                                    40000 RUB
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product__body">
+                            <img src="./img/products/product-1.png" alt="" class="product__image">
+                            <div class="product__actions">
+                                <ul class="product__size size">
+                                    <li class="size__item">
+                                        S
+                                    </li>
+                                    <li class="size__item">
+                                        M
+                                    </li>
+                                    <li class="size__item">
+                                        L
+                                    </li>
+                                    <li class="size__item">
+                                        XL
+                                    </li>
+                                </ul>
+                                <button class="add-to-cart">
+                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <use href="./img/sprites.svg#product-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product__footer">
+                            <span class="product__series">FEAROFGOD HOODIE</span>
+                            <div class="product__info">
+                                <span class="product__name">
+                                    "FEAROFGOD" LOGO HOODIE
+                                </span>
+                                <span class="product__price">
+                                    40000 RUB
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper container">
+                <a href="mailto:support@fearofgod.cc" class="footer__mail">support@fearofgod.cc</a>
+                <nav class="footer__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#!" class="nav__link">
+                                Отзывы
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#!" class="nav__link">
+                                Контакты
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#!" class="nav__link">
+                                Политика конфиденциальности
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#!" class="nav__link">
+                                Политика соглашения
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
