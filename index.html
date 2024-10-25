@@ -54,10 +54,10 @@
                     <!-- <span class="cart-empty">В корзине пока пусто.</span> -->
                     <div class="cart__footer">
                         <div class="cart__info">
-                            <h2 class="cart__title">Total:</h2>
+                            <h2 class="cart__title">Итого:</h2>
                             <span class="cart__total-sum">1500000 RUB</span>
                         </div>
-                        <button class="cart__button">Go to Checkout</button>
+                        <button class="cart__button">Перейти к оформлению</button>
                     </div>
                 </div>
                 <a href="./" class="header__logo logo">
@@ -100,11 +100,14 @@
                         <h2 class="form__title">
                             CONTACT INFO
                         </h2>
-                        <input type="text" class="form__input" placeholder="Имя" autocomplete="off" required>
-                        <input type="text" class="form__input" placeholder="Фамилия" autocomplete="off" required>
-                        <input type="text" class="form__input" placeholder="Отчество" autocomplete="off" required>
-                        <input type="text" class="form__input" placeholder="Ваши соц.сети для связи" autocomplete="off"
+                        <input type="text" class="form__input" name="imya" placeholder="Имя" autocomplete="off"
                             required>
+                        <input type="text" class="form__input" name="familiya" placeholder="Фамилия" autocomplete="off"
+                            required>
+                        <input type="text" class="form__input" name="otchestvo" placeholder="Отчество"
+                            autocomplete="off" required>
+                        <input type="text" class="form__input" name="messenger" placeholder="Ваши соц.сети для связи"
+                            autocomplete="off" required>
                         <div class="form__group">
                             <input type="text" class="form__input" placeholder="Город" autocomplete="off" required>
                             <input type="text" class="form__input" placeholder="Пост-код" autocomplete="off" required>
@@ -233,6 +236,7 @@
                 </nav>
             </div>
         </footer>
+        <div class="background"></div>
     </div>
 </body>
 </html>

@@ -142,14 +142,20 @@ function addToCart(product, selectedSize) {
         updateCartSum();
         updateCartCounter();
         checkCartForEmpty();
-        saveCartToLocalStorage();
     });
 
     cartSum += parseFloat(productPrice.trim());
     shoppingCartCounter++;
     updateCartCounter();
     updateCartSum();
-    saveCartToLocalStorage();
+}
+
+function updateCartCounter() {
+    const cartCounterElement = document.querySelector('.shopping-cart-button__counter');
+
+    if (cartCounterElement) {
+        cartCounterElement.textContent = shoppingCartCounter;
+    }
 }
 
 function updateCartSum() {
@@ -158,94 +164,39 @@ function updateCartSum() {
     sum.textContent = `${cartSum} RUB`;
 }
 
-updateCartSum();
+updateCartSum()
 
 function checkCartForEmpty() {
     const cartList = document.querySelector('.cart__list');
     const cartItems = cartList.querySelectorAll('.cart__item');
-    const cartButton = document.querySelector('.shopping-cart-button');
 
     if (cartItems.length === 0) {
         const cartCounterElement = document.querySelector('.shopping-cart-button__counter');
-
-        if (cartCounterElement) {
-            cartCounterElement.remove();
-        }
 
         const emptyCartText = document.createElement('span');
         emptyCartText.className = 'cart-empty';
         emptyCartText.textContent = 'В корзине пока пусто.';
         document.querySelector('.cart').appendChild(emptyCartText);
+
+        if (cartCounterElement !== null) {
+            cartCounterElement.remove();
+        }
     } else {
+        const cartButton = document.querySelector('.shopping-cart-button');
         const cartEmptyElement = document.querySelector('.cart-empty');
 
-        if (cartEmptyElement) {
+        if (cartEmptyElement !== null) {
             cartEmptyElement.remove();
         }
 
-        updateCartCounter();
-    }
-}
-
-function updateCartCounter() {
-    const cartCounterElement = document.querySelector('.shopping-cart-button__counter');
-
-    if (shoppingCartCounter > 0) {
-        if (!cartCounterElement) {
-            const newCartCounterElement = document.createElement('div');
-            newCartCounterElement.classList.add('shopping-cart-button__counter');
-            newCartCounterElement.textContent = shoppingCartCounter;
-            document.querySelector('.shopping-cart-button').appendChild(newCartCounterElement);
-        } else {
+        if (shoppingCartCounter > 0) {
+            const cartCounterElement = document.createElement('div');
+            cartCounterElement.classList.add('shopping-cart-button__counter');
             cartCounterElement.textContent = shoppingCartCounter;
-        }
-    } else {
-        if (cartCounterElement) {
-            cartCounterElement.remove();
+
+            cartButton.appendChild(cartCounterElement);
         }
     }
 }
 
-function saveCartToLocalStorage() {
-    const cartData = {
-        items: [],
-        totalSum: cartSum,
-        itemCount: shoppingCartCounter
-    };
-
-    const cartItems = document.querySelectorAll('.cart__item');
-    cartItems.forEach(item => {
-        const itemName = item.querySelector('.item__name').textContent;
-        const itemPrice = item.querySelector('.item__price').textContent;
-        const itemSize = item.querySelector('.item__property').textContent;
-        cartData.items.push({ name: itemName, price: itemPrice, size: itemSize });
-    });
-
-    localStorage.setItem('shoppingCart', JSON.stringify(cartData));
-}
-
-function loadCartFromLocalStorage() {
-    const cartData = JSON.parse(localStorage.getItem('shoppingCart'));
-    if (cartData) {
-        shoppingCartCounter = 0;
-        cartSum = 0;
-
-        cartData.items.forEach(item => {
-            const product = Array.from(document.querySelectorAll('.product')).find(p =>
-                p.querySelector('.product__name').textContent.trim() === item.name.trim()
-            );
-
-            if (product) {
-                addToCart(product, item.size);
-            }
-        });
-
-        updateCartCounter();
-        updateCartSum();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    loadCartFromLocalStorage();
-    checkCartForEmpty();
-});
+document.addEventListener('DOMContentLoaded', checkCartForEmpty);

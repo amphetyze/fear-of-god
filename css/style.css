@@ -37,25 +37,24 @@ h6 {
 
 html,
 body {
-  height: 100%;
   line-height: 1;
 }
 
 @font-face {
   font-family: "STRANGER CREATURE";
-  src: url("/fonts/stranger-creature/STRANGERCREATURE.woff2") format("woff2"), url("/fonts/stranger-creature/STRANGERCREATURE.woff") format("woff"), url("/fonts/stranger-creature/STRANGERCREATURE.ttf") format("truetype"), url("/fonts/stranger-creature/STRANGERCREATURE.eot") format("embedded-opentype");
+  src: url("../fonts/stranger-creature/STRANGERCREATURE.woff2") format("woff2"), url("../fonts/stranger-creature/STRANGERCREATURE.woff") format("woff"), url("../fonts/stranger-creature/STRANGERCREATURE.ttf") format("truetype"), url("../fonts/stranger-creature/STRANGERCREATURE.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Beatrice Deck Trial Medium";
-  src: url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff2") format("woff2"), url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff") format("woff"), url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.ttf") format("truetype"), url("/fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.eot") format("embedded-opentype");
+  src: url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff2") format("woff2"), url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.woff") format("woff"), url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.ttf") format("truetype"), url("../fonts/beatrice-deck-trial/BeatriceDeckTRIAL-Medium.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Vela Sans";
-  src: url("/fonts/vela-sans/VelaSans-SemiBold.woff2") format("woff2"), url("/fonts/vela-sans/VelaSans-SemiBold.woff") format("woff"), url("/fonts/vela-sans/VelaSans-SemiBold.ttf") format("truetype"), url("/fonts/vela-sans/VelaSans-SemiBold.eot") format("embedded-opentype");
+  src: url("../fonts/vela-sans/VelaSans-SemiBold.woff2") format("woff2"), url("../fonts/vela-sans/VelaSans-SemiBold.woff") format("woff"), url("../fonts/vela-sans/VelaSans-SemiBold.ttf") format("truetype"), url("../fonts/vela-sans/VelaSans-SemiBold.eot") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -97,6 +96,11 @@ body {
           animation: shake 300ms;
 }
 
+.wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
 .notification-bar {
   min-height: 50px;
   padding: 14px 24px;
@@ -110,6 +114,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  position: relative;
+  z-index: 15;
   font-family: var(--second-family);
   font-weight: 400;
   font-size: 14px;
@@ -134,6 +140,10 @@ body {
   }
 }
 
+.header {
+  position: relative;
+  z-index: 15;
+}
 .header__wrapper {
   position: relative;
   padding: 25px 0px;
@@ -251,8 +261,8 @@ body {
 }
 .shopping-cart-button__counter {
   position: absolute;
-  right: -5px;
-  bottom: -5px;
+  right: -7px;
+  top: 10px;
   width: 15px;
   height: 15px;
   display: -webkit-box;
@@ -474,6 +484,7 @@ body {
   position: absolute;
   bottom: -160px;
   right: 0;
+  z-index: 3;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -543,6 +554,8 @@ body {
 }
 .section--banner {
   padding-top: 24px;
+  position: relative;
+  z-index: 1;
 }
 .section--banner .section__wrapper {
   padding: 15px 15px 0;
@@ -561,12 +574,14 @@ body {
   max-width: 1110px;
   width: 100%;
   min-height: 366px;
-  background-image: url("/img/banner/poster.png");
+  background-image: url("../img/banner/poster.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .section--shopping {
+  position: relative;
+  z-index: 1;
   padding-bottom: 25px;
 }
 .section--shopping .section__wrapper {
@@ -590,7 +605,6 @@ body {
 .section .product {
   max-width: 370px;
   width: 100%;
-  background-color: #fff;
 }
 .section .product__body {
   min-height: 380px;
@@ -602,6 +616,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   border: 1px solid #d7d7d7;
+  background-color: #fff;
 }
 .section .product__footer {
   padding-top: 20px;
@@ -726,21 +741,22 @@ body {
   line-height: 100%;
   letter-spacing: -0.02em;
   outline: none;
+  background-color: transparent;
 }
 .form__input::-webkit-input-placeholder {
-  color: #5e5e5e;
+  color: #0f0f0f;
 }
 .form__input::-moz-placeholder {
-  color: #5e5e5e;
+  color: #0f0f0f;
 }
 .form__input:-ms-input-placeholder {
-  color: #5e5e5e;
+  color: #0f0f0f;
 }
 .form__input::-ms-input-placeholder {
-  color: #5e5e5e;
+  color: #0f0f0f;
 }
 .form__input::placeholder {
-  color: #5e5e5e;
+  color: #0f0f0f;
 }
 .form__input:focus {
   border: 1px solid #000;
@@ -829,7 +845,9 @@ body {
 }
 
 .footer {
-  background-color: #f5f5f5;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(226, 226, 226, 0.5960784314);
 }
 .footer__wrapper {
   min-height: 70px;
@@ -907,6 +925,16 @@ body {
 }
 .footer a:hover {
   color: #666;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: 0;
+  background-image: url("../img/noisy-background.png");
 }
 
 @-webkit-keyframes shake {
